@@ -39,25 +39,46 @@ a:hover {
 }
 
 section {
-  margin-bottom: 200px;
+  width: 70%;
 
   min-height: 100vh;
 
   display: flex;
-  justify-content: center;
-}
-
-.intro {
-  width: 70%;
-
-  position: relative;
+  flex-direction: row;
+  align-items: center;
 
   text-align: left;
+}
 
-  display: flex;
-  flex-direction: column;
+.readmore-symbol {
+  width: 50px;
+  height: 50px;
 
-  perspective: 100000px;
+  position: absolute;
+  bottom: -12px;
+  left: calc(50vw - 25px);
+
+  /* animation: fade-out linear both; */
+  /* animation: fade-out 5s ease infinite; */
+
+  /* animation-timeline: scroll(); */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .readmore-symbol {
+      animation-name: fade-out;
+      animation-duration: 1ms; /* Firefox requires this to apply the animation */
+      animation-timeline: scroll(nearest block);
+    }
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0%;
+    transform: rotate(2turn);
+  }
 }
 
 .fancy-intro {
