@@ -1,9 +1,19 @@
 body {
   background-color: #131417;
-  display: flex;
-  /* justify-content: center; */
   font-size: 1.5rem;
   padding-left: 200px;
+
+  color: #edffec;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  /* mix-blend-mode: color-dodge; */
+}
+
+img {
+  z-index: -1;
 }
 
 a {
@@ -28,17 +38,21 @@ a:hover {
     0 0 3px rgba(255, 255, 255, 0.3);
 }
 
+section {
+  margin-bottom: 200px;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
 .intro {
   width: 70%;
 
   position: relative;
-  margin-top: 30vh;
-  margin-bottom: 500vh;
 
-  color: #edffec;
   text-align: left;
-
-  height: 50px;
 
   display: flex;
   flex-direction: column;
@@ -49,7 +63,6 @@ a:hover {
 .fancy-intro {
   display: flex;
   flex-direction: row;
-  height: 300px;
   align-items: center;
 
   margin-bottom: 10px;
@@ -100,7 +113,7 @@ a:hover {
   from {
     transform: rotateX(0deg);
   }
-  60% {
+  45% {
     transform: rotateX(90deg);
   }
   90% {
