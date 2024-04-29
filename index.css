@@ -1,32 +1,44 @@
+/*
+Color Palette
+#edffec
+#61e786
+#1c77c3
+#f39237
+#d63230
+*/
+
 body {
   background-color: #131417;
   font-size: 1.5rem;
-  padding-left: 200px;
 
   color: #edffec;
 
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
-
-  /* mix-blend-mode: color-dodge; */
 }
 
-img {
+.decoration {
   z-index: -1;
 }
 
 a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+
+.link {
   transition: 3s;
   color: #61e786;
 
-  text-decoration: none;
   font-weight: 400;
   background: -webkit-linear-gradient(150deg, #f39237, #d63230);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-a:hover {
+.link:hover {
   color: #d63230;
   background: -webkit-linear-gradient(100deg, #f39237, #61e786);
   -webkit-background-clip: text;
@@ -39,9 +51,12 @@ a:hover {
 }
 
 section {
+  padding: 0px 200px;
   width: 70%;
 
   min-height: 100vh;
+
+  position: relative;
 
   display: flex;
   flex-direction: row;
@@ -55,13 +70,8 @@ section {
   height: 50px;
 
   position: absolute;
-  bottom: -12px;
+  bottom: 0px;
   left: calc(50vw - 25px);
-
-  /* animation: fade-out linear both; */
-  /* animation: fade-out 5s ease infinite; */
-
-  /* animation-timeline: scroll(); */
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -75,6 +85,10 @@ section {
 }
 
 @keyframes fade-out {
+  50% {
+    opacity: 0%;
+    transform: rotate(2turn);
+  }
   to {
     opacity: 0%;
     transform: rotate(2turn);
@@ -140,4 +154,71 @@ section {
   90% {
     transform: rotateX(180deg);
   }
+}
+
+.card {
+  margin: 20px 0px;
+
+  width: 70vw;
+
+  background-color: #e5e5e5;
+  padding: 20px;
+  border-radius: 10px;
+
+  color: #131417;
+}
+
+.education-card {
+  transition: all 0.5s;
+}
+
+.education-card:hover {
+  filter: brightness(120%);
+}
+
+.university-holder {
+  display: flex;
+  align-items: center;
+}
+
+.university-holder > p {
+  margin-left: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .scroll-up-anim {
+      animation-name: scroll-up;
+      animation-duration: 1ms; /* Firefox requires this to apply the animation */
+      animation-timeline: scroll(nearest block);
+    }
+  }
+}
+
+@keyframes scroll-up {
+  from {
+    transform: translateY(200px);
+  }
+  10% {
+    transform: translateY(50px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+}
+
+.job-holder {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.job-holder > img {
+  margin-right: 20px;
+}
+.job-period {
+  background-color: #61e786;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: auto;
 }
